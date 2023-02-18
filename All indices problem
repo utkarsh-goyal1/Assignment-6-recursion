@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int []A=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            A[i]=sc.nextInt();
+        }
+        int m=sc.nextInt();
+        int c=0;
+        getindex(A,m,c);
+
+    }
+    public static void getindex(int []A,int k,int i)
+	{
+		if(i==A.length)
+		{
+			return;
+		}
+		if(A[i]==k)
+		{
+			System.out.print(i+" ");
+		}
+		getindex(A,k,i+1);
+		
+	}
+}
