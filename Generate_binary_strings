@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner (System.in);
+        int t=sc.nextInt();
+        for(int i=0;i<t;i++)
+        {
+            String s=sc.next();
+            print(s,"",0);
+            System.out.println();
+        }
+    }
+    public static void print(String s,String ans,int flag)
+    {
+        if(flag==s.length())
+        {
+            System.out.print(ans+" ");
+            return ;
+        }
+        if(s.charAt(flag)=='?'){
+            print(s,ans+'0',flag+1);
+            print(s,ans+'1',flag+1);
+        }
+        else
+        {
+            print(s,ans+s.charAt(flag),flag+1);    
+        }
+    }
+    
+}
