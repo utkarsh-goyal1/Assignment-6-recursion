@@ -1,0 +1,36 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int []A=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            A[i]=sc.nextInt();
+        }
+        int m=sc.nextInt();
+        int c=0;
+        ArrayList<Integer>List=new ArrayList<>();
+        print(A,m,c,List);
+        if(List.size()==0)
+        {
+            System.out.print(-1);
+        }
+        else
+        {
+            System.out.print(List.get(List.size()-1));
+        }
+    }
+    public static void print(int []A,int m,int c,ArrayList<Integer>List)
+    {
+        if(c==A.length)
+        {
+            return;
+        }
+        if(A[c]==m)
+        {
+            List.add(c);
+        }
+        print(A,m,c+1,List);
+    }
+}
