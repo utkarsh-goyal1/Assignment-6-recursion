@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+    public static void main(String args[]) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        String ans="";
+        print(s,ans);
+        System.out.println();
+        System.out.print(count);
+    }
+    static int count=0;
+    public static void print(String s,String ans)
+    {
+        if(s.length()==0)
+        {
+            System.out.print(ans+" ");
+            count++;
+            return ;
+        }
+        char ch=s.charAt(0);
+        print(s.substring(1),ans+"");
+        print(s.substring(1),ans+ch);
+    }
+}
